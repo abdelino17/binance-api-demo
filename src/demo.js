@@ -3,7 +3,7 @@ const { Account, Market, Trade } = require('./modules')
 const { generateColor } = require('./helpers/utils')
 const { HttpClient, WsClient } = require('./clients')
 const { INTERVAL_TRADE_WS_CHECK, INTERVAL_WS_LATENCY_CHECK, NUMBER_TICKERS } = require('./helpers/constants')
-const { apiBaseUrl, apiKey, secretKey, wsBaseEndpoint } = require('./config')
+const { apiBaseUrl, apiKey, secretKey, wsBaseEndpoint } = require('./config2')
 
 // --- Clients Init
 const httpClient = new HttpClient(apiBaseUrl, apiKey, secretKey)
@@ -16,7 +16,7 @@ const Demo = async function () {
     accountLogger = new Logger("Account", color.next().value)
     const account = new Account(httpClient, wsClient, accountLogger)
     await account.fetchInitialBalance()
-    account.displayBalances()
+    account.showBalances()
     await account.fetchListenKey()
     // account.showListenKey()
     await account.openUserDataStream()
@@ -25,7 +25,7 @@ const Demo = async function () {
     marketLogger = new Logger("Market", color.next().value)
     const market = new Market(httpClient, wsClient, marketLogger)
     await market.fetchLast24HrsTickers()
-    market.displayMarket()
+    market.showMarket()
     await market.open24HrsStream()
 
     // --- Trade Init

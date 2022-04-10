@@ -25,7 +25,7 @@ class Market extends Base {
         }
     }
 
-    displayMarket() {
+    showMarket() {
         this.logger.info("---- Pairs / Volumes ----")
         for (const [symbol, volume] of this.sortTickers()) {
             this.logger.info(`${symbol.padStart(10, " ")} = ${volume}`)
@@ -45,7 +45,7 @@ class Market extends Base {
 
                 this.logger.info("There was an update on the market.")
                 this.setTickers(response.map(ticker => ({ symbol: ticker.s, volume: ticker.v })))
-                // this.displayBalances()
+                // this.showMarket()
             },
             "error": (err) => {
                 this.logger.error(err)

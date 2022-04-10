@@ -33,7 +33,7 @@ class Account extends Base {
         }
     }
 
-    displayBalances() {
+    showBalances() {
         this.logger.info("---- Spot Account Balances ----")
         for (const [asset, free] of Object.entries(this.balances)) {
             if (free > 0)
