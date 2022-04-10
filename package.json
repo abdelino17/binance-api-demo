@@ -1,0 +1,19 @@
+{
+  "name": "binance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "demo": "node src/index.js"
+  },
+  "engines": {
+    "node": ">=17.5.0",
+    "npm": ">=8.5.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.5.0"
+  }
+}
